@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Seetha 🤍</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= THEME ================= */
+
+:root{
+    --cream:#fffaf0;
+    --cream-white:#fffdf7;
+    --mint:#dcefe5;
+    --mint-light:#edf7f1;
+    --mint-dark:#6f9d87;
+    --green:#537c69;
+    --deep-green:#355648;
+    --text:#405449;
+    --soft-text:#68786f;
+    --white:#ffffff;
+}
+
+
+/* ================= BASIC ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    background:var(--cream);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+.hidden{
+    display:none !important;
+}
+
+
+/* ================= LOADING ================= */
+
+#loading{
+    position:fixed;
+    inset:0;
+    background:var(--cream);
+
+    z-index:9999;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    transition:1s ease;
+}
+
+.loading-heart{
+    font-size:58px;
+    animation:heartbeat 1.2s infinite;
+}
+
+#loading p{
+    margin-top:18px;
+    font-size:13px;
+    letter-spacing:2px;
+    color:var(--green);
+}
+
+#loading.hide{
+    opacity:0;
+    pointer-events:none;
+}
+
+@keyframes heartbeat{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.22);
+    }
+}
+
+
+/* ================= MUSIC ================= */
+
+.music{
+    position:fixed;
+
+    right:20px;
+    top:20px;
+
+    width:48px;
+    height:48px;
+
+    border:none;
+    border-radius:50%;
+
+    background:var(--green);
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    z-index:1000;
+
+    box-shadow:0 8px 25px rgba(53,86,72,.20);
+}
+
+.music.playing{
+    animation:musicPulse 1.5s infinite;
+}
+
+@keyframes musicPulse{
+
+    50%{
+        transform:scale(1.1);
+    }
+
+}
+
+
+/* ================= COMMON ================= */
+
+section{
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:80px 20px;
+}
+
+.content{
+    width:min(750px,100%);
+}
+
+.script{
+    font-family:"Dancing Script",cursive;
+    color:var(--green);
+}
+
+
+/* ================= FLOATING HEARTS ================= */
+
+.heart{
+    position:absolute;
+
+    color:var(--mint-dark);
+
+    opacity:.30;
+
+    animation:floatHeart 8s linear infinite;
+
+    pointer-events:none;
+}
+
+.heart:nth-child(1){
+    left:8%;
+    bottom:-30px;
+    font-size:30px;
+}
+
+.heart:nth-child(2){
+    left:25%;
+    bottom:-50px;
+    font-size:18px;
+    animation-delay:2s;
+}
+
+.heart:nth-child(3){
+    right:15%;
+    bottom:-30px;
+    font-size:35px;
+    animation-delay:4s;
+}
+
+.heart:nth-child(4){
+    right:30%;
+    bottom:-40px;
+    font-size:20px;
+    animation-delay:1s;
+}
+
+@keyframes floatHeart{
+
+    from{
+        transform:translateY(0) rotate(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:.35;
+    }
+
+    to{
+        transform:translateY(-110vh) rotate(30deg);
+        opacity:0;
+    }
+
+}
+
+
+/* ================= HOME ================= */
+
+#home{
+
+    background:
+        radial-gradient(
+            circle at top left,
+            var(--mint),
+            transparent 42%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            #e9f5ed,
+            transparent 45%
+        ),
+
+        var(--cream);
+
+}
+
+
+/* little heading */
+
+.small{
+    font-size:13px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:var(--mint-dark);
+}
+
+
+/* main title */
+
+.home-title{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:clamp(65px,12vw,115px);
+
+    line-height:.95;
+
+    color:var(--deep-green);
+
+    margin:25px 0;
+
+}
+
+
+/* home paragraph */
+
+.home-text{
+
+    max-width:570px;
+
+    margin:auto;
+
+    font-size:16px;
+
+    line-height:2;
+
+    color:var(--soft-text);
+
+}
+
+
+/* button */
+
+.start{
+
+    margin-top:35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:16px 34px;
+
+    background:var(--green);
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 12px 35px rgba(53,86,72,.20);
+
+    transition:.3s;
+
+}
+
+.start:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+/* ================= FIRST MESSAGE ================= */
+
+#message{
+
+    background:var(--cream-white);
+
+}
+
+.message-title{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:clamp(45px,8vw,70px);
+
+    color:var(--green);
+
+    margin-bottom:35px;
+
+}
+
+.message p{
+
+    font-size:16px;
+
+    line-height:2;
+
+    margin:18px auto;
+
+    max-width:650px;
+
+}
+
+.name{
+
+    color:var(--green);
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:35px;
+
+}
+
+
+/* ================= MYSTERY ================= */
+
+#mystery{
+
+    background:var(--deep-green);
+
+    color:white;
+
+}
+
+#mystery .message-title{
+
+    color:#e4f1e9;
+
+}
+
+#mystery p{
+
+    color:#dbe9e1;
+
+}
+
+.mystery-text{
+
+    font-size:18px;
+
+    line-height:2;
+
+}
+
+.question{
+
+    margin-top:35px;
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:38px;
+
+    color:#dcefe5;
+
+}
+
+.guess{
+
+    margin-top:30px;
+
+    padding:14px 32px;
+
+    background:transparent;
+
+    border:1px solid #dcefe5;
+
+    color:white;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    transition:.4s;
+
+}
+
+.guess:hover{
+
+    background:#edf7f1;
+
+    color:var(--deep-green);
+
+}
+
+
+/* ================= REVEAL INTRO ================= */
+
+#revealIntro{
+
+    background:var(--mint-light);
+
+}
+
+.reveal-title{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:clamp(50px,8vw,75px);
+
+    color:var(--deep-green);
+
+}
+
+.reveal-text{
+
+    margin:25px auto;
+
+    max-width:600px;
+
+    line-height:2;
+
+    font-size:16px;
+
+    color:var(--soft-text);
+
+}
+
+.look{
+
+    margin-top:35px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:var(--green);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    box-shadow:
+        0 10px 30px rgba(53,86,72,.18);
+
+}
+
+
+/* ================= DRAWING ================= */
+
+#drawing{
+
+    background:#f5f0e5;
+
+    min-height:110vh;
+
+}
+
+.drawing-content{
+
+    width:min(900px,100%);
+
+}
+
+.drawing-heading{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:clamp(50px,8vw,75px);
+
+    color:var(--deep-green);
+
+    margin-bottom:12px;
+
+}
+
+.drawing-sub{
+
+    max-width:600px;
+
+    margin:0 auto 35px;
+
+    line-height:1.9;
+
+    color:var(--soft-text);
+
+}
+
+
+/* paper */
+
+.paper{
+
+    width:min(820px,100%);
+
+    margin:auto;
+
+    background:#fffdf7;
+
+    padding:18px;
+
+    position:relative;
+
+    box-shadow:
+
+        0 25px 70px rgba(50,60,50,.18),
+
+        0 3px 10px rgba(0,0,0,.08);
+
+    transform:rotate(-.5deg);
+
+}
+
+.paper::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:8px;
+
+    border:1px solid rgba(53,86,72,.13);
+
+    pointer-events:none;
+
+}
+
+.paper img{
+
+    display:block;
+
+    width:100%;
+
+    opacity:0;
+
+    transform:scale(.94);
+
+    filter:
+        grayscale(100%)
+        contrast(1.35)
+        brightness(1.08);
+
+    transition:
+        opacity 3s ease,
+        transform 3s ease;
+
+}
+
+.paper img.revealed{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+
+/* pencil line */
+
+.pencil-line{
+
+    width:0;
+
+    height:2px;
+
+    background:var(--green);
+
+    margin:35px auto 0;
+
+    transition:2.5s ease;
+
+}
+
+.pencil-line.show{
+
+    width:180px;
+
+}
+
+
+/* quote */
+
+.drawing-quote{
+
+    margin:28px auto 0;
+
+    max-width:600px;
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:27px;
+
+    color:var(--green);
+
+    opacity:0;
+
+    transform:translateY(15px);
+
+    transition:1.5s ease;
+
+}
+
+.drawing-quote.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* ================= FEELINGS ================= */
+
+#feelings{
+
+    background:var(--cream-white);
+
+}
+
+.feeling-title{
+
+    font-family:"Dancing Script",cursive;
+
+    color:var(--deep-green);
+
+    font-size:clamp(48px,8vw,72px);
+
+    margin-bottom:30px;
+
+}
+
+.feelings p{
+
+    max-width:680px;
+
+    margin:18px auto;
+
+    line-height:2;
+
+    font-size:16px;
+
+}
+
+.big-line{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:34px;
+
+    color:var(--green);
+
+    margin:30px 0;
+
+}
+
+
+/* ================= FINAL ================= */
+
+#final{
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #dcefe5,
+            #edf7f1 50%,
+            var(--cream) 100%
+        );
+
+    min-height:100vh;
+
+}
+
+.final-title{
+
+    font-family:"Dancing Script",cursive;
+
+    color:var(--deep-green);
+
+    font-size:clamp(60px,10vw,95px);
+
+    line-height:1;
+
+}
+
+.final p{
+
+    max-width:650px;
+
+    margin:25px auto;
+
+    font-size:16px;
+
+    line-height:2;
+
+    color:var(--text);
+
+}
+
+.signature{
+
+    margin-top:40px;
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:38px;
+
+    color:var(--green);
+
+}
+
+.restart{
+
+    margin-top:30px;
+
+    border:none;
+
+    background:var(--green);
+
+    color:white;
+
+    padding:13px 28px;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+}
+
+
+/* ================= ANIMATION ================= */
+
+.showSection{
+
+    animation:sectionAppear 1.5s ease forwards;
+
+}
+
+@keyframes sectionAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    section{
+
+        padding:75px 18px;
+
+    }
+
+    .home-title{
+
+        font-size:70px;
+
+    }
+
+    .home-text{
+
+        font-size:14px;
+
+    }
+
+    .message p,
+    .feelings p,
+    .reveal-text{
+
+        font-size:14px;
+
+        line-height:1.9;
+
+    }
+
+    .paper{
+
+        padding:10px;
+
+    }
+
+    .drawing-quote{
+
+        font-size:24px;
+
+    }
+
+    .music{
+
+        width:44px;
+
+        height:44px;
+
+        right:15px;
+
+        top:15px;
+
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= LOADING ================= -->
+
+<div id="loading">
+
+    <div class="loading-heart">🤍</div>
+
+    <p>
+        Creating something special for Seetha...
+    </p>
+
+</div>
+
+
+<!-- ================= MUSIC ================= -->
+
+<button
+    class="music"
+    onclick="toggleMusic()"
+    id="musicButton">
+
+    🎵
+
+</button>
+
+<audio id="music" loop>
+
+    <source src="music.mp3" type="audio/mpeg">
+
+</audio>
+
+
+<!-- ================= FLOATING HEARTS ================= -->
+
+<div class="heart">♡</div>
+<div class="heart">♥</div>
+<div class="heart">♡</div>
+<div class="heart">♥</div>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home">
+
+    <div class="content">
+
+        <div class="small">
+
+            A little surprise for you
+
+        </div>
+
+
+        <h1 class="home-title">
+
+            For<br>
+
+            Seetha 🤍
+
+        </h1>
+
+
+        <p class="home-text">
+
+            I made something very small for you.
+
+            <br>
+
+            It may not be perfect...
+
+            <br>
+
+            but every word here comes from
+            a very genuine place in my heart.
+
+        </p>
+
+
+        <button
+            class="start"
+            onclick="openMessage()">
+
+            Open it slowly... 💌
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MESSAGE ================= -->
+
+<section
+    id="message"
+    class="hidden">
+
+    <div class="content message">
+
+        <h2 class="message-title">
+
+            Seetha...
+
+        </h2>
+
+
+        <p>
+
+            Sometimes I don't need a long conversation
+            with you.
+
+            I just need one look...
+
+        </p>
+
+
+        <p>
+
+            And somehow,
+            that one look says more
+            than words ever could.
+
+        </p>
+
+
+        <p>
+
+            Maybe that's why there is one little thing
+            about you that I always notice.
+
+        </p>
+
+
+        <div class="name">
+
+            Something I could never ignore. 🤍
+
+        </div>
+
+
+        <button
+            class="start"
+            onclick="openMystery()">
+
+            Continue... ✨
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MYSTERY ================= -->
+
+<section
+    id="mystery"
+    class="hidden">
+
+    <div class="content">
+
+        <h2 class="message-title">
+
+            But I won't tell you yet...
+
+        </h2>
+
+
+        <p class="mystery-text">
+
+            Because I want you to feel it
+            before you see it.
+
+            <br><br>
+
+            Think about all the little things..
+
+            <br>
+
+            Your smile...
+            your expressions...
+            the way you look at Me...
+
+        </p>
+
+
+        <div class="question">
+
+            Can you guess what I mean? 👀
+
+        </div>
+
+
+        <button
+            class="guess"
+            onclick="openReveal()">
+
+            I think I know... 🤍
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REVEAL INTRO ================= -->
+
+<section
+    id="revealIntro"
+    class="hidden">
+
+    <div class="content">
+
+        <h2 class="reveal-title">
+
+            Yes... it's your eyes. 👀
+
+        </h2>
+
+
+        <p class="reveal-text">
+
+            I don't know if you realise it,
+
+            but your eyes have a way of staying
+            in my memory.
+
+        </p>
+
+
+        <button
+            class="look"
+            onclick="showDrawing()">
+
+            Look a little closer... ✏️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DRAWING ================= -->
+
+<section
+    id="drawing"
+    class="hidden">
+
+    <div class="drawing-content">
+
+        <h2 class="drawing-heading">
+
+            Drawn With Love ✏️
+
+        </h2>
+
+
+        <p class="drawing-sub">
+
+            Some memories are too special
+            to leave inside a phone gallery.
+
+        </p>
+
+
+        <div class="paper">
+
+            <img
+                src="eyes.jpg"
+                id="eyes"
+                alt="Seetha's eyes">
+
+        </div>
+
+
+        <div
+            class="pencil-line"
+            id="pencilLine">
+
+        </div>
+
+
+        <div
+            class="drawing-quote"
+            id="drawingQuote">
+
+            "Some eyes are beautiful to look at...
+
+            <br>
+
+            but yours became a memory
+            I wanted to keep." 🤍
+
+        </div>
+
+
+        <button
+            class="start hidden"
+            id="feelingsButton"
+            onclick="showFeelings()">
+
+            There is one more thing... 🌿
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEELINGS ================= -->
+
+<section
+    id="feelings"
+    class="hidden">
+
+    <div class="content feelings">
+
+        <h2 class="feeling-title">
+
+            What I really wanted to say...
+
+        </h2>
+
+
+        <p>
+
+            Seetha, I don't know whether you ever notice
+            how your eyes change when you're happy,
+
+            or when you're laughing,
+
+            or when you're annoyed with me.
+
+        </p>
+
+
+        <p>
+
+            But I've noticed.
+
+            Maybe more than I should. 🤍
+
+        </p>
+
+
+        <div class="big-line">
+
+            And that's the thing...
+
+            <br>
+
+            I don't just remember your eyes.
+
+            <br>
+
+            I remember the feelings behind them.
+
+        </div>
+
+
+        <p>
+
+            Every silly moment,
+            every small argument,
+            every laugh,
+            every memory...
+
+            somehow they all feel connected
+            to the person behind those eyes.
+
+        </p>
+
+
+        <button
+            class="start"
+            onclick="showFinal()">
+
+            One last thing... 🤍
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FINAL ================= -->
+
+<section
+    id="final"
+    class="hidden">
+
+    <div class="content">
+
+        <h2 class="final-title">
+
+            Keep Smiling,<br>
+
+            Seetha 🤍
+
+        </h2>
+
+
+        <p>
+
+            Maybe one day we'll look back at this
+            and laugh at how emotional
+            this little website was.
+
+        </p>
+
+
+        <p>
+
+            But right now,
+            I just wanted you to know...
+
+        </p>
+
+
+        <p>
+
+            And whenever I look into your eyes,
+            there's always this small feeling
+            in my heart...
+
+        </p>
+
+
+        <div class="big-line">
+
+            "Yeah...
+
+            <br>
+
+            that's my Seetha." 🤍
+
+        </div>
+
+
+        <p>
+
+            So this isn't really about
+            a pencil drawing.
+
+            <br><br>
+
+            It's about keeping a small piece
+            of a beautiful memory.
+
+        </p>
+
+
+        <div class="signature">
+
+            With love, always. 🤍
+
+        </div>
+
+
+        <button
+            class="restart"
+            onclick="location.reload()">
+
+            See it again ✨
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* ================= LOADING ================= */
+
+window.addEventListener("load",function(){
+
+    setTimeout(function(){
+
+        document
+        .getElementById("loading")
+        .classList.add("hide");
+
+    },1800);
+
+});
+
+
+/* ================= SHOW SECTION ================= */
+
+function showSection(id){
+
+    const section =
+        document.getElementById(id);
+
+    section.classList.remove("hidden");
+
+    section.classList.add("showSection");
+
+    setTimeout(function(){
+
+        section.scrollIntoView({
+            behavior:"smooth"
+        });
+
+    },100);
+
+}
+
+
+/* ================= JOURNEY ================= */
+
+function openMessage(){
+
+    showSection("message");
+
+}
+
+
+function openMystery(){
+
+    showSection("mystery");
+
+}
+
+
+function openReveal(){
+
+    showSection("revealIntro");
+
+}
+
+
+function showDrawing(){
+
+    showSection("drawing");
+
+
+    setTimeout(function(){
+
+        document
+        .getElementById("eyes")
+        .classList.add("revealed");
+
+        document
+        .getElementById("pencilLine")
+        .classList.add("show");
+
+    },900);
+
+
+    setTimeout(function(){
+
+        document
+        .getElementById("drawingQuote")
+        .classList.add("show");
+
+    },3000);
+
+
+    setTimeout(function(){
+
+        document
+        .getElementById("feelingsButton")
+        .classList.remove("hidden");
+
+    },4300);
+
+}
+
+
+function showFeelings(){
+
+    showSection("feelings");
+
+}
+
+
+function showFinal(){
+
+    showSection("final");
+
+}
+
+
+/* ================= MUSIC ================= */
+
+let isPlaying=false;
+
+function toggleMusic(){
+
+    const music =
+        document.getElementById("music");
+
+    const button =
+        document.getElementById("musicButton");
+
+
+    if(!isPlaying){
+
+        music.play()
+        .then(function(){
+
+            isPlaying=true;
+
+            button.classList.add("playing");
+
+        })
+        .catch(function(){
+
+            alert(
+                "Please put your music file as music.mp3 beside index.html 🤍"
+            );
+
+        });
+
+    }
+
+    else{
+
+        music.pause();
+
+        isPlaying=false;
+
+        button.classList.remove("playing");
+
+    }
+
+}
+
+
+/* ================= IMAGE ERROR ================= */
+
+document
+.getElementById("eyes")
+.addEventListener("error",function(){
+
+    this.style.display="none";
+
+    document.querySelector(".paper").innerHTML +=
+
+    `<p style="
+        padding:60px 20px;
+        font-family:'Dancing Script',cursive;
+        font-size:25px;
+        color:#537c69;
+    ">
+
+        Your eyes belong here, Seetha... 🤍
+
+        <br><br>
+
+        Please add
+        <b>seetha-eyes.jpg</b>
+        beside index.html.
+
+    </p>`;
+
+});
+
+</script>
+
+</body>
+</html>
